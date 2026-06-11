@@ -143,4 +143,4 @@ Keep this open in a tab. The first 15 entries are the ones you will encounter ev
 
 ---
 
-*If a link 404s, please [open an issue](https://github.com/CODE-CRUNCH-WORLDWIDE) so we can replace it.*
+*If a link 404s, please [open an issue](https://github.com/CODECRUNCHWORLDWIDE) so we can replace it.*
