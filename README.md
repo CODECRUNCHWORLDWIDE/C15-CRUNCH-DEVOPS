@@ -4,7 +4,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE)
 [![Docker · K8s · Terraform · CI/CD](https://img.shields.io/badge/stack-Docker_·_K8s_·_Terraform_·_CI/CD-2563EB.svg)](#stack)
-[![Built in the open](https://img.shields.io/badge/built-in%20the%20open-2563EB.svg)](https://github.com/CODE-CRUNCH-CLUB)
+[![Built in the open](https://img.shields.io/badge/built-in%20the%20open-2563EB.svg)](https://github.com/CODECRUNCHWORLDWIDE)
 
 C15 is the **operations counterpart to the Python tracks.** If you've built something in C1, C16, or C5 and want it on the internet — operating reliably, observable, recoverable when it breaks — this is where you learn that work.
 
