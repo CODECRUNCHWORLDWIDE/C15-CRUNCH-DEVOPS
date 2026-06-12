@@ -1,0 +1,693 @@
+{
+  "repo": "C15-CRUNCH-DEVOPS",
+  "files": [
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "title": "Contributor Covenant Code of Conduct"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "title": "Contributing to Crunch DevOps"
+    },
+    {
+      "path": "README.md",
+      "title": "C15 \u00b7 Crunch DevOps"
+    },
+    {
+      "path": "assets/branding/BRAND.md",
+      "title": "C15 \u00b7 Crunch DevOps \u2014 Brand Guide"
+    },
+    {
+      "path": "curriculum/SYLLABUS.md",
+      "title": "C15 \u00b7 Crunch DevOps \u2014 Full Syllabus"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/README.md",
+      "title": "Week 1 \u2014 What is a Container, Really?"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/challenges/README.md",
+      "title": "Week 1 \u2014 Challenges"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/challenges/challenge-01-shrink-the-image.md",
+      "title": "Challenge 1 \u2014 Shrink the Image"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/exercises/README.md",
+      "title": "Week 1 \u2014 Exercises"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/exercises/exercise-01-build-a-container-by-hand.md",
+      "title": "Exercise 1 \u2014 Build a Container by Hand"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/exercises/exercise-02-first-real-docker.md",
+      "title": "Exercise 2 \u2014 First Real Docker"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/homework.md",
+      "title": "Week 1 Homework"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/lecture-notes/01-namespaces-cgroups-and-the-container-mental-model.md",
+      "title": "Lecture 1 \u2014 Namespaces, cgroups, and the Container Mental Model"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/lecture-notes/02-from-tarball-to-image-the-oci-stack.md",
+      "title": "Lecture 2 \u2014 From Tarball to Image: The OCI Stack"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/mini-project/README.md",
+      "title": "Mini-Project \u2014 Containerize an Existing App"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/quiz.md",
+      "title": "Week 1 \u2014 Quiz"
+    },
+    {
+      "path": "curriculum/week-01-what-is-a-container/resources.md",
+      "title": "Week 1 \u2014 Resources"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/README.md",
+      "title": "Week 2 \u2014 Dockerfiles That Don't Suck"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/challenges/README.md",
+      "title": "Week 2 \u2014 Challenges"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/challenges/challenge-01-shrink-to-under-50mb.md",
+      "title": "Challenge 1 \u2014 Shrink to Under 50 MB"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/exercises/README.md",
+      "title": "Week 2 \u2014 Exercises"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/exercises/exercise-01-three-builds-three-images.md",
+      "title": "Exercise 1 \u2014 Three Builds, Three Images"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/exercises/exercise-02-cache-mounts.md",
+      "title": "Exercise 2 \u2014 Cache Mounts"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/exercises/exercise-03-scan-with-trivy.md",
+      "title": "Exercise 3 \u2014 Scan with Trivy"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/homework.md",
+      "title": "Week 2 Homework"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/lecture-notes/01-the-anatomy-of-a-dockerfile.md",
+      "title": "Lecture 1 \u2014 The Anatomy of a Dockerfile"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/lecture-notes/02-layer-caching-multistage-distroless.md",
+      "title": "Lecture 2 \u2014 Layer Caching, Multi-stage Builds, Distroless, and Scanning"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/mini-project/README.md",
+      "title": "Mini-Project \u2014 Containerize a Real Python App Three Ways"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/quiz.md",
+      "title": "Week 2 \u2014 Quiz"
+    },
+    {
+      "path": "curriculum/week-02-dockerfiles-that-dont-suck/resources.md",
+      "title": "Week 2 \u2014 Resources"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/README.md",
+      "title": "Week 3 \u2014 `docker compose` and the 12-Factor App"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/challenges/README.md",
+      "title": "Week 3 \u2014 Challenges"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/challenges/challenge-01-one-command-spinup-with-seed-data.md",
+      "title": "Challenge 1 \u2014 One-Command Spin-Up with Seed Data"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/exercises/README.md",
+      "title": "Week 3 \u2014 Exercises"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/exercises/exercise-01-three-service-compose.md",
+      "title": "Exercise 1 \u2014 Three-Service Compose"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/exercises/exercise-02-healthchecks-and-restart.md",
+      "title": "Exercise 2 \u2014 Healthchecks and Restart"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/exercises/exercise-03-env-and-secrets.md",
+      "title": "Exercise 3 \u2014 Env and Secrets"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/homework.md",
+      "title": "Week 3 Homework"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/lecture-notes/01-the-compose-yaml-anatomy.md",
+      "title": "Lecture 1 \u2014 The `compose.yaml` Anatomy"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/lecture-notes/02-the-twelve-factors-applied.md",
+      "title": "Lecture 2 \u2014 The Twelve Factors, Applied"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/mini-project/README.md",
+      "title": "Mini-Project \u2014 A Local Dev Environment for a Multi-Service App"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/quiz.md",
+      "title": "Week 3 \u2014 Quiz"
+    },
+    {
+      "path": "curriculum/week-03-docker-compose-12-factor/resources.md",
+      "title": "Week 3 \u2014 Resources"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/README.md",
+      "title": "Week 4 \u2014 GitHub Actions Beyond Hello-World"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/challenges/README.md",
+      "title": "Week 4 \u2014 Challenges"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/challenges/challenge-01-build-and-push-to-ghcr.md",
+      "title": "Challenge 1 \u2014 Build and Push to GHCR with Provenance"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/exercises/README.md",
+      "title": "Week 4 \u2014 Exercises"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/exercises/exercise-01-first-real-pipeline.md",
+      "title": "Exercise 1 \u2014 Your First Real Pipeline"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/exercises/exercise-02-matrix-builds.md",
+      "title": "Exercise 2 \u2014 Matrix Builds"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/exercises/exercise-03-deploy-on-merge.md",
+      "title": "Exercise 3 \u2014 Deploy on Merge"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/homework.md",
+      "title": "Week 4 Homework"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/lecture-notes/01-workflows-jobs-matrix-cache.md",
+      "title": "Lecture 1 \u2014 Workflows, Jobs, Matrices, and the Cache"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/lecture-notes/02-reusable-workflows-and-deploy-on-merge.md",
+      "title": "Lecture 2 \u2014 Reusable Workflows, OIDC, and Deploy on Merge"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/mini-project/README.md",
+      "title": "Mini-Project \u2014 A Real CI/CD Pipeline for a Real Repo"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/quiz.md",
+      "title": "Week 4 \u2014 Quiz"
+    },
+    {
+      "path": "curriculum/week-04-github-actions/resources.md",
+      "title": "Week 4 \u2014 Resources"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/README.md",
+      "title": "Week 5 \u2014 Terraform Fundamentals"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/challenges/README.md",
+      "title": "Week 5 \u2014 Challenges"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/challenges/challenge-01-deploy-a-real-app-on-vps.md",
+      "title": "Challenge 01 \u2014 Deploy a Real App on a Real VPS, in Terraform"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/exercises/README.md",
+      "title": "Week 5 \u2014 Exercises"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/exercises/exercise-01-first-resource.md",
+      "title": "Exercise 1 \u2014 Your First Real Resource on DigitalOcean"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/exercises/exercise-02-modules-and-vars.md",
+      "title": "Exercise 2 \u2014 Modules, Variables, and Outputs"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/exercises/exercise-03-remote-state.md",
+      "title": "Exercise 3 \u2014 Remote State on Spaces with the Two-Phase Bootstrap"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/homework.md",
+      "title": "Week 5 Homework"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/lecture-notes/01-providers-resources-state.md",
+      "title": "Lecture 1 \u2014 Providers, Resources, and the State File"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/lecture-notes/02-modules-variables-outputs.md",
+      "title": "Lecture 2 \u2014 Modules, Variables, Outputs, and the Two-Phase Bootstrap"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/mini-project/README.md",
+      "title": "Mini-Project \u2014 A Real App on DigitalOcean, Fully in Terraform"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/quiz.md",
+      "title": "Week 5 \u2014 Quiz"
+    },
+    {
+      "path": "curriculum/week-05-terraform-fundamentals/resources.md",
+      "title": "Week 5 \u2014 Resources"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/README.md",
+      "title": "Week 6 \u2014 GitOps and Immutable Infrastructure"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/challenges/README.md",
+      "title": "Week 6 \u2014 Challenges"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/challenges/challenge-01-rebuild-vs-patch.md",
+      "title": "Challenge 01 \u2014 A Rebuild-vs-Patch Runbook for Four Real Incident Shapes"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/exercises/README.md",
+      "title": "Week 6 \u2014 Exercises"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/exercises/exercise-01-packer-image.md",
+      "title": "Exercise 1 \u2014 Bake a DigitalOcean Droplet Image with Packer"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/exercises/exercise-02-argocd-setup.md",
+      "title": "Exercise 2 \u2014 Install Argo CD on a `kind` Cluster and Reconcile a Small App"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/exercises/exercise-03-flux-vs-argo.md",
+      "title": "Exercise 3 \u2014 Flux on a Parallel `kind` Cluster; the Side-by-Side Comparison"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/homework.md",
+      "title": "Week 6 Homework"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/lecture-notes/01-immutable-infrastructure-and-packer.md",
+      "title": "Lecture 1 \u2014 Immutable Infrastructure and Packer"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/lecture-notes/02-argocd-and-flux-the-pull-model.md",
+      "title": "Lecture 2 \u2014 Argo CD and Flux: The Pull Model"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/mini-project/README.md",
+      "title": "Mini-Project \u2014 Convert the Week 5 Terraform Setup to GitOps"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/quiz.md",
+      "title": "Week 6 \u2014 Quiz"
+    },
+    {
+      "path": "curriculum/week-06-gitops-and-immutable-infra/resources.md",
+      "title": "Week 6 \u2014 Resources"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/README.md",
+      "title": "Week 7 \u2014 Kubernetes from First Principles"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/challenges/README.md",
+      "title": "Week 7 \u2014 Challenges"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/challenges/challenge-01-debug-a-broken-deployment.md",
+      "title": "Challenge 01 \u2014 Debug Five Broken Deployments"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/challenges/challenge-02-write-a-readiness-and-liveness-probe.md",
+      "title": "Challenge 02 \u2014 Write a Readiness and Liveness Probe for a Misbehaving Python API"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/exercises/README.md",
+      "title": "Week 7 \u2014 Exercises"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/exercises/SOLUTIONS.md",
+      "title": "Week 7 \u2014 Exercise Solutions"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/exercises/exercise-01-bootstrap-a-cluster.md",
+      "title": "Exercise 1 \u2014 Bootstrap a `kind` Cluster and Inspect Every Component"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/exercises/exercise-02-kubectl-the-cluster.md",
+      "title": "Exercise 2 \u2014 `kubectl` Fluency: `get`, `describe`, `explain`, jsonpath, and the Four Flavours of Object Access"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/homework.md",
+      "title": "Week 7 Homework"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/lecture-notes/01-what-problem-k8s-solves.md",
+      "title": "Lecture 1 \u2014 What Problem Kubernetes Solves"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/lecture-notes/02-control-plane-and-the-api-server.md",
+      "title": "Lecture 2 \u2014 The Control Plane and the API Server"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/lecture-notes/03-the-core-objects-and-how-they-compose.md",
+      "title": "Lecture 3 \u2014 The Core Objects and How They Compose"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/mini-project/README.md",
+      "title": "Mini-Project \u2014 A 3-Tier App on `kind`: nginx \u2192 Python API \u2192 Postgres"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/quiz.md",
+      "title": "Week 7 \u2014 Quiz"
+    },
+    {
+      "path": "curriculum/week-07-kubernetes-from-first-principles/resources.md",
+      "title": "Week 7 \u2014 Resources"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/README.md",
+      "title": "Week 8 \u2014 Managed Kubernetes and the Add-On Layer"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/challenges/README.md",
+      "title": "Week 8 \u2014 Challenges"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/challenges/challenge-01-port-from-kind-to-autopilot.md",
+      "title": "Challenge 1 \u2014 Port from kind to GKE Autopilot"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/challenges/challenge-02-debug-a-stuck-argocd-sync.md",
+      "title": "Challenge 2 \u2014 Debug a Stuck ArgoCD Sync"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/exercises/README.md",
+      "title": "Week 8 \u2014 Exercises"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/exercises/SOLUTIONS.md",
+      "title": "Exercises \u2014 Solutions and Expected Output"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/exercises/exercise-01-stand-up-kind-with-ingress.md",
+      "title": "Exercise 1 \u2014 Stand Up `kind` with NGINX Ingress"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/exercises/exercise-02-install-cert-manager-and-issue-a-cert.md",
+      "title": "Exercise 2 \u2014 Install cert-manager and Issue a Certificate"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/exercises/exercise-03-bootstrap-argocd.md",
+      "title": "Exercise 3 \u2014 Bootstrap ArgoCD and Sync an App"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/homework.md",
+      "title": "Week 8 Homework"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/lecture-notes/01-managed-vs-self-managed-and-the-three-clouds.md",
+      "title": "Lecture 1 \u2014 Managed vs Self-Managed, and the Three Clouds"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/lecture-notes/02-gke-autopilot-node-pools-and-workload-identity.md",
+      "title": "Lecture 2 \u2014 GKE Autopilot, Node Pools, and Workload Identity"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/lecture-notes/03-the-add-on-stack-ingress-certs-dns-argocd.md",
+      "title": "Lecture 3 \u2014 The Add-On Stack: Ingress, Certs, DNS, ArgoCD"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/mini-project/README.md",
+      "title": "Week 8 Mini-Project \u2014 A Small App on kind, with the Full Add-On Stack, Deployed via ArgoCD, Portable to GKE Autopilot"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/quiz.md",
+      "title": "Week 8 \u2014 Quiz"
+    },
+    {
+      "path": "curriculum/week-08-managed-kubernetes-and-addons/resources.md",
+      "title": "Week 8 \u2014 Resources"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/README.md",
+      "title": "Week 9 \u2014 Observability: Prometheus, Grafana, Loki, and OpenTelemetry"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/challenges/README.md",
+      "title": "Challenges \u2014 Week 9"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/challenges/challenge-01-define-an-slo-and-watch-the-budget-burn.md",
+      "title": "Challenge 1 \u2014 Define an SLO, Write the Burn-Rate Alert, Watch the Budget Burn"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/challenges/challenge-02-debug-a-noisy-cardinality-explosion.md",
+      "title": "Challenge 2 \u2014 Debug a Cardinality Explosion in Prometheus"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/exercises/README.md",
+      "title": "Exercises \u2014 Week 9"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/exercises/SOLUTIONS.md",
+      "title": "Solutions \u2014 Week 9 Exercises"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/exercises/exercise-01-install-kube-prometheus-stack.md",
+      "title": "Exercise 1 \u2014 Install `kube-prometheus-stack` on `kind`"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/exercises/exercise-02-write-a-service-monitor-and-an-alert.md",
+      "title": "Exercise 2 \u2014 Write a `ServiceMonitor`, a `PrometheusRule`, and Route an Alert"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/exercises/exercise-03-instrument-fastapi-with-otel.md",
+      "title": "Exercise 3 \u2014 Instrument a FastAPI Service with OpenTelemetry"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/exercises/exercise-04-grafana-dashboard-as-code.md",
+      "title": "Exercise 4 \u2014 Grafana Dashboard as Code"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/homework.md",
+      "title": "Homework \u2014 Week 9"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/lecture-notes/01-three-pillars-prometheus-promql.md",
+      "title": "Lecture 1 \u2014 The Three Pillars, Prometheus, and PromQL"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/lecture-notes/02-grafana-alertmanager-dashboards-as-code.md",
+      "title": "Lecture 2 \u2014 Grafana, Alertmanager, and Dashboards-as-Code"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/lecture-notes/03-opentelemetry-loki-red-use-slos.md",
+      "title": "Lecture 3 \u2014 OpenTelemetry, Loki, RED, USE, and SLOs"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/mini-project/README.md",
+      "title": "Week 9 Mini-Project \u2014 A Fully Observable FastAPI Service"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/quiz.md",
+      "title": "Quiz \u2014 Week 9"
+    },
+    {
+      "path": "curriculum/week-09-observability-prometheus-grafana-loki-otel/resources.md",
+      "title": "Resources \u2014 Week 9"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/README.md",
+      "title": "Week 10 \u2014 Secrets Management and Supply-Chain Security"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/challenges/README.md",
+      "title": "Challenges \u2014 Week 10"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/challenges/challenge-01-block-unsigned-images-with-kyverno.md",
+      "title": "Challenge 1 \u2014 Block Unsigned Images with a Kyverno Admission Policy"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/challenges/challenge-02-trace-a-supply-chain-attack.md",
+      "title": "Challenge 2 \u2014 Trace a Supply-Chain Attack Back Through Provenance"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/exercises/README.md",
+      "title": "Exercises \u2014 Week 10"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/exercises/SOLUTIONS.md",
+      "title": "Solutions \u2014 Week 10 Exercises"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/exercises/exercise-01-vault-and-sops.md",
+      "title": "Exercise 1 \u2014 Vault in Dev Mode + SOPS with age"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/exercises/exercise-02-sealed-secrets-and-eso.md",
+      "title": "Exercise 2 \u2014 Sealed Secrets and the External Secrets Operator"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/exercises/exercise-03-cosign-sign-and-verify.md",
+      "title": "Exercise 3 \u2014 Sign and Verify a Container Image with cosign"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/exercises/exercise-04-sbom-with-syft-and-grype.md",
+      "title": "Exercise 4 \u2014 SBOM Generation with syft, Vulnerability Scan with grype, Attestation with cosign"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/homework.md",
+      "title": "Homework \u2014 Week 10"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/lecture-notes/01-secrets-vault-sops-sealed-eso.md",
+      "title": "Lecture 1 \u2014 Secrets Management: Vault, SOPS, Sealed Secrets, External Secrets"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/lecture-notes/02-slsa-sigstore-cosign-rekor-fulcio.md",
+      "title": "Lecture 2 \u2014 SLSA, Sigstore, and Keyless Signing"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/lecture-notes/03-sbom-syft-grype-attestations-attacks.md",
+      "title": "Lecture 3 \u2014 SBOMs, Vulnerability Scanning, and Two Famous Attacks"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/mini-project/README.md",
+      "title": "Week 10 Mini-Project \u2014 A Signed, SBOM'd, Secret-Aware Service"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/quiz.md",
+      "title": "Quiz \u2014 Week 10"
+    },
+    {
+      "path": "curriculum/week-10-secrets-and-supply-chain/resources.md",
+      "title": "Resources \u2014 Week 10"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/README.md",
+      "title": "Week 11 \u2014 Cloud Cost Engineering and FinOps"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/challenges/README.md",
+      "title": "Week 11 \u2014 Challenges"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/challenges/challenge-01-scheduled-scaledown.md",
+      "title": "Challenge 1 \u2014 Scheduled scale-down for staging environments"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/challenges/challenge-02-anomaly-detector-v2.md",
+      "title": "Challenge 2 \u2014 A second-generation cost anomaly detector"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/exercises/README.md",
+      "title": "Week 11 \u2014 Exercises"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/exercises/SOLUTIONS.md",
+      "title": "Week 11 \u2014 Solutions"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/exercises/exercise-01-opencost-install-and-read.md",
+      "title": "Exercise 1 \u2014 Install OpenCost on `kind` and read the allocation API"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/exercises/exercise-02-allocation-by-label-and-rightsizing.md",
+      "title": "Exercise 2 \u2014 Allocation by label, Kyverno enforcement, right-sizing"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/exercises/exercise-03-anomaly-detection.md",
+      "title": "Exercise 3 \u2014 Cost anomaly detection in Python"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/exercises/exercise-04-pricing-calculators.md",
+      "title": "Exercise 4 \u2014 The pricing-calculator workflow"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/homework.md",
+      "title": "Week 11 \u2014 Homework"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/lecture-notes/01-unit-economics-pricing-and-waste.md",
+      "title": "Lecture 1 \u2014 Unit Economics, Cloud Pricing, and the Three Waste Sources"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/lecture-notes/02-opencost-allocation-and-anomalies.md",
+      "title": "Lecture 2 \u2014 OpenCost: Allocation, Efficiency, and Anomalies"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/lecture-notes/03-finops-framework-and-culture.md",
+      "title": "Lecture 3 \u2014 The FinOps Foundation Framework and the Practice of Cost Culture"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/mini-project/README.md",
+      "title": "Mini-project \u2014 Instrument and report on a mis-sized workload"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/quiz.md",
+      "title": "Week 11 \u2014 Quiz"
+    },
+    {
+      "path": "curriculum/week-11-cost-and-finops/resources.md",
+      "title": "Week 11 \u2014 Resources"
+    },
+    {
+      "path": "curriculum/week-12-capstone-production-grade-deploy/README.md",
+      "title": "Week 12 \u2014 Capstone: A Production-Grade Kubernetes Deploy"
+    },
+    {
+      "path": "curriculum/week-12-capstone-production-grade-deploy/exercises/README.md",
+      "title": "Week 12 \u2014 Exercises"
+    },
+    {
+      "path": "curriculum/week-12-capstone-production-grade-deploy/exercises/exercise-01-cluster-bootstrap.md",
+      "title": "Exercise 1 \u2014 Cluster Bootstrap: kind + Terraform + ArgoCD"
+    },
+    {
+      "path": "curriculum/week-12-capstone-production-grade-deploy/exercises/exercise-02-app-and-ci.md",
+      "title": "Exercise 2 \u2014 The Application and Its CI Pipeline"
+    },
+    {
+      "path": "curriculum/week-12-capstone-production-grade-deploy/lecture-notes/01-composition-and-bootstrap-order.md",
+      "title": "Lecture 1 \u2014 The Composition, the Bootstrap Order, the Repository Layout"
+    },
+    {
+      "path": "curriculum/week-12-capstone-production-grade-deploy/lecture-notes/02-gitops-and-app-of-apps.md",
+      "title": "Lecture 2 \u2014 The GitOps Layout and the App-of-Apps Pattern"
+    },
+    {
+      "path": "curriculum/week-12-capstone-production-grade-deploy/lecture-notes/03-operating-the-cluster-and-the-runbook.md",
+      "title": "Lecture 3 \u2014 Operating the Cluster and Writing the Runbook"
+    },
+    {
+      "path": "curriculum/week-12-capstone-production-grade-deploy/resources.md",
+      "title": "Week 12 \u2014 Resources"
+    }
+  ]
+}
