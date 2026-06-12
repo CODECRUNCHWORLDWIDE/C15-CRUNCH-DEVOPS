@@ -1,9 +1,10 @@
 # Week 1 — Exercises
 
-Two drills. Each takes 60–90 minutes. Do them in order — the second one only lands if the first one did.
+Three drills. Each takes 60–90 minutes. Do them in order — each one only lands if the one before it did.
 
 1. **[Exercise 1 — Build a Container by Hand](exercise-01-build-a-container-by-hand.md)** — `unshare` + `chroot` + a Debian rootfs tarball. No Docker. (~90 min)
 2. **[Exercise 2 — First Real Docker](exercise-02-first-real-docker.md)** — the same container, with Docker, then a side-by-side comparison. (~60 min)
+3. **[Exercise 3 — Dissect a Running Container](exercise-03-dissect-a-running-container.md)** — drive one container through its full lifecycle and take it apart live from the host with `lsns`, `nsenter`, the cgroup files, and `capsh`. (~90 min)
 
 ## Workflow
 
