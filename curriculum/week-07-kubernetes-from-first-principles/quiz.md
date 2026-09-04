@@ -11,6 +11,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) Kubernetes is a load balancer with a YAML interface.
 - D) Kubernetes is a replacement for Linux's systemd that schedules processes across machines.
 
+<details>
+<summary>Answer</summary>
+
+**B.** Kubernetes is a declarative API plus controllers that converge actual to desired state. The five operational properties — placement, restart, rolling updates, service discovery, configuration injection — are the *concrete* problems it solves. The word "orchestration" is jargon; the five problems are the answer.
+
+</details>
+
 ---
 
 **Q2.** A teammate proposes "let's have our CI job write directly to etcd to register a deploy" because "going through the API server is slow." Which of the following is the **best** rebuttal?
@@ -19,6 +26,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - B) The API server is the only contract layer in Kubernetes: it authenticates, authorizes, validates, mutates, and notifies watchers on every write. Bypassing it skips all five and leaves the cluster in a state controllers do not know how to reason about. The API server is faster than your teammate thinks; the "slowness" they perceived is something else.
 - C) etcd is read-only from outside the API server's TLS scope.
 - D) Writing to etcd directly is allowed but discouraged.
+
+<details>
+<summary>Answer</summary>
+
+**B.** The API server is the contract layer; bypassing it skips authentication, authorization, validation, mutation, and watch notifications. Controllers reason about state-via-the-API-server; direct etcd writes break the model.
+
+</details>
 
 ---
 
@@ -29,6 +43,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) `kubectl describe pod <pod>` (and read the `Events:` section, which will name the scheduling constraint that failed)
 - D) `kubectl delete pod <pod>` and hope it comes back healthier
 
+<details>
+<summary>Answer</summary>
+
+**C.** `kubectl describe pod` and the `Events:` section. The scheduler emits events explaining why a pod is unschedulable. The answer is in the cluster; the skill is reading it.
+
+</details>
+
 ---
 
 **Q4.** Which of the following correctly describes the relationship between a **Deployment**, a **ReplicaSet**, and the **Pods** they produce?
@@ -37,6 +58,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - B) A Deployment manages one or more ReplicaSets (one per `spec.template` hash; usually only one is non-zero at a time). Each ReplicaSet manages N Pods. Deletion cascades via `ownerReferences`: deleting the Deployment deletes its ReplicaSets, which deletes its Pods.
 - C) A Pod is a template that is materialized into a ReplicaSet, which is materialized into a Deployment.
 - D) Deployments only exist in the `apps/v1beta1` API; modern clusters use ReplicaSets directly.
+
+<details>
+<summary>Answer</summary>
+
+**B.** Deployment owns ReplicaSets (one per template hash); ReplicaSet owns Pods; deletion cascades via `ownerReferences`. The chain is reified in `metadata.ownerReferences` on each child.
+
+</details>
 
 ---
 
@@ -47,6 +75,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) The cluster's `kube-proxy` is misconfigured.
 - D) The Service's `type` is wrong; only `LoadBalancer` Services have endpoints.
 
+<details>
+<summary>Answer</summary>
+
+**B.** Label-selector mismatch is the canonical "no endpoints" cause. Compare `Service.spec.selector` with `kubectl get pods --show-labels`. Most often it is a typo on the `app` label or a namespace mismatch.
+
+</details>
+
 ---
 
 **Q6.** Which of the following is the **correct** description of the difference between a readiness probe and a liveness probe?
@@ -55,6 +90,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - B) Readiness probe failure removes the pod from the Service's endpoint list (no traffic; pod still running); liveness probe failure causes the container to be restarted. The two probes solve different problems and are tuned independently.
 - C) Liveness probes run only on the first start; readiness probes run continuously.
 - D) Readiness probes are deprecated as of Kubernetes 1.27 in favor of startup probes.
+
+<details>
+<summary>Answer</summary>
+
+**B.** Readiness controls Service endpoint inclusion (gentle action); liveness controls container restart (aggressive action). Same probe schema, different consequences.
+
+</details>
 
 ---
 
@@ -65,6 +107,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) The pod's ServiceAccount lacks `get` permission on ConfigMaps.
 - D) The ConfigMap controller is malfunctioning.
 
+<details>
+<summary>Answer</summary>
+
+**B.** Env vars from a ConfigMap are snapshot-at-start. The cluster does not restart pods when a ConfigMap changes. Mitigations: `kubectl rollout restart`, or hash the ConfigMap into the Deployment template (Helm and kustomize do this).
+
+</details>
+
 ---
 
 **Q8.** Which Kubernetes component **schedules** a pod onto a node?
@@ -73,6 +122,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - B) `kube-scheduler` watches for pods with empty `nodeName`, picks a node via a filter-then-score algorithm, and writes the binding. Once the binding is written, the kubelet on the chosen node sees it and starts the containers.
 - C) `kube-controller-manager` does scheduling along with everything else.
 - D) `etcd` schedules pods using its consensus algorithm.
+
+<details>
+<summary>Answer</summary>
+
+**B.** `kube-scheduler`. It is the only component that decides pod placement; the kubelet *executes* on the bound node but does not pick it.
+
+</details>
 
 ---
 
@@ -83,6 +139,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) The second apply was rejected by the API server because the object already exists.
 - D) `kubectl apply` is randomly idempotent; the behavior depends on cluster load.
 
+<details>
+<summary>Answer</summary>
+
+**B.** `kubectl apply` is idempotent via a three-way merge with the last-applied annotation. Running it twice with the same YAML produces no diff and the API returns `unchanged`.
+
+</details>
+
 ---
 
 **Q10.** Which of the following is the **best** description of the *reconciliation loop* that every Kubernetes controller follows?
@@ -92,21 +155,15 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) Controllers run once at cluster startup and never again.
 - D) Controllers are deprecated in favor of admission webhooks.
 
----
+<details>
+<summary>Answer</summary>
 
-## Answers
-
-1. **B.** Kubernetes is a declarative API plus controllers that converge actual to desired state. The five operational properties — placement, restart, rolling updates, service discovery, configuration injection — are the *concrete* problems it solves. The word "orchestration" is jargon; the five problems are the answer.
-2. **B.** The API server is the contract layer; bypassing it skips authentication, authorization, validation, mutation, and watch notifications. Controllers reason about state-via-the-API-server; direct etcd writes break the model.
-3. **C.** `kubectl describe pod` and the `Events:` section. The scheduler emits events explaining why a pod is unschedulable. The answer is in the cluster; the skill is reading it.
-4. **B.** Deployment owns ReplicaSets (one per template hash); ReplicaSet owns Pods; deletion cascades via `ownerReferences`. The chain is reified in `metadata.ownerReferences` on each child.
-5. **B.** Label-selector mismatch is the canonical "no endpoints" cause. Compare `Service.spec.selector` with `kubectl get pods --show-labels`. Most often it is a typo on the `app` label or a namespace mismatch.
-6. **B.** Readiness controls Service endpoint inclusion (gentle action); liveness controls container restart (aggressive action). Same probe schema, different consequences.
-7. **B.** Env vars from a ConfigMap are snapshot-at-start. The cluster does not restart pods when a ConfigMap changes. Mitigations: `kubectl rollout restart`, or hash the ConfigMap into the Deployment template (Helm and kustomize do this).
-8. **B.** `kube-scheduler`. It is the only component that decides pod placement; the kubelet *executes* on the bound node but does not pick it.
-9. **B.** `kubectl apply` is idempotent via a three-way merge with the last-applied annotation. Running it twice with the same YAML produces no diff and the API returns `unchanged`.
-10. **B.** Level-triggered reconciliation: watch + diff + act, robust to missed events because the controller looks at current state. The same pattern is fractal across the project.
+**B.** Level-triggered reconciliation: watch + diff + act, robust to missed events because the controller looks at current state. The same pattern is fractal across the project.
 
 ---
+
+</details>
 
 *If you missed more than two, re-read the relevant lecture section before moving on. Q2 (the API-server-only-talks-to-etcd rule), Q5 (label-selector binding), Q6 (readiness vs liveness), and Q10 (the reconciliation loop) are the conceptual foundations of every week from here forward; the others are mechanics you will pick up by repetition.*
+
+---

@@ -33,6 +33,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | `CS 4273` — Monitor a deployed system: collect metrics, logs and traces, build dashboards, define service-level objectives, and route alerts. |
+| Industry | Answer "why was this request slow" from three angles at once, and carry the pager for an objective you wrote yourself. |
+| Beyond the bar | Defines an error budget and then deliberately burns it, with the burn-rate alert pair written and fired — `challenges/challenge-01-define-an-slo-and-watch-the-budget-burn.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **Weeks 1-8 of C15**. Specifically:

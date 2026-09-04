@@ -11,6 +11,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) `INCLUDE`
 - D) `IMPORT`
 
+<details>
+<summary>Answer</summary>
+
+**B** — `COPY` does exactly one thing: copy local files. `ADD` *also* fetches URLs and auto-extracts tarballs, which are the two footguns Lecture 1 warns about. Hadolint flags `ADD` (DL3020). `INCLUDE` and `IMPORT` are not Dockerfile instructions.
+
+</details>
+
 ---
 
 **Q2.** Given this `Dockerfile`:
@@ -30,6 +37,13 @@ You change a single line in `app.py` and rebuild. Why does `pip install` re-run?
 - C) `pip` checks the network on every build for newer wheel versions.
 - D) `python:3.12-slim` is a mutable tag and pulled a new image.
 
+<details>
+<summary>Answer</summary>
+
+**B** — Cache invalidation is positional. `COPY . .` includes `app.py`; its content changed; its cache key changed; every subsequent instruction's key changes too, including `RUN pip install`. The fix is to `COPY requirements.txt` first, run pip, *then* `COPY` the source.
+
+</details>
+
 ---
 
 **Q3.** What does `EXPOSE 8000` actually do?
@@ -38,6 +52,13 @@ You change a single line in `app.py` and rebuild. Why does `pip install` re-run?
 - B) Opens a firewall rule for port 8000.
 - C) Writes "8000" into the image config as documentation; `docker run -P` maps it to a random host port.
 - D) Binds the application to port 8000 at runtime.
+
+<details>
+<summary>Answer</summary>
+
+**C** — `EXPOSE` is documentation. It writes the port into the image's config blob, where `docker inspect` shows it. It does **not** publish a port. `docker run -p 8000:8000` (lowercase, explicit) is what publishes. `docker run -P` (uppercase, magic) auto-maps EXPOSEd ports to random host ports.
+
+</details>
 
 ---
 
@@ -55,6 +76,13 @@ What does `docker run myimage serve --port 8080` execute?
 - C) `/usr/local/bin/myapp serve --port 8080`
 - D) `/bin/sh -c "/usr/local/bin/myapp serve --port 8080"`
 
+<details>
+<summary>Answer</summary>
+
+**C** — `ENTRYPOINT` is the binary; `CMD` provides default arguments; positional arguments to `docker run` *replace* `CMD` and become arguments to `ENTRYPOINT`. So the run line replaces `--help` with `serve --port 8080`, and the actual command is `/usr/local/bin/myapp serve --port 8080`.
+
+</details>
+
 ---
 
 **Q5.** Which is the **correct** way to pass a secret to a build step without recording it in `docker history`?
@@ -63,6 +91,13 @@ What does `docker run myimage serve --port 8080` execute?
 - B) `ENV SECRET=...` in the Dockerfile.
 - C) `RUN --mount=type=secret,id=mysecret cat /run/secrets/mysecret` plus `docker build --secret id=mysecret,src=...`
 - D) `COPY .env /app/.env` and reading it in the container.
+
+<details>
+<summary>Answer</summary>
+
+**C** — BuildKit's `--mount=type=secret` mounts the secret to a tmpfs during the `RUN` and never records it in the image or history. `ARG` (option A) **does** record in history; `ENV` (B) writes the secret into the image config blob; `COPY .env` (D) ships the secret with the image. (C) is the only secure answer.
+
+</details>
 
 ---
 
@@ -73,6 +108,13 @@ What does `docker run myimage serve --port 8080` execute?
 - C) `pip install` is skipped entirely.
 - D) The `pip` command is run inside a different container.
 
+<details>
+<summary>Answer</summary>
+
+**B** — Cache mounts are external to the image. The cache persists across builds and speeds up `pip install` when deps change, but the cache directory itself is unmounted before the layer is committed. That is the whole point.
+
+</details>
+
 ---
 
 **Q7.** Which statement about distroless images is correct?
@@ -81,6 +123,13 @@ What does `docker run myimage serve --port 8080` execute?
 - B) Distroless images contain only the language runtime and direct dependencies; they have no shell, no `apt`, and no `ls`.
 - C) Distroless images are larger than Debian-slim images because they statically link everything.
 - D) Distroless images require Kaniko or Buildah; they cannot be used with Docker.
+
+<details>
+<summary>Answer</summary>
+
+**B** — Distroless contains the runtime plus its libs and nothing else. No shell, no package manager. This is what gives distroless its near-zero CVE surface and its "you cannot `docker exec sh`" property. (A) is wrong: distroless is Debian-based, not Alpine. (C) is the opposite of true. (D) is wrong: distroless images work with any OCI-compatible builder.
+
+</details>
 
 ---
 
@@ -91,6 +140,13 @@ What does `docker run myimage serve --port 8080` execute?
 - C) Patch `libssl3` manually inside a custom `RUN apt-get install` step.
 - D) Switch the base image to Alpine.
 
+<details>
+<summary>Answer</summary>
+
+**B** — A populated "Fixed Version" means upstream has patched. The fastest, most operationally sound action is to rebuild on a current base image. Suppression (A) is a last resort and requires documented rationale. Manual patching (C) creates drift. Switching to Alpine (D) is a much bigger change for a single CVE.
+
+</details>
+
 ---
 
 **Q9.** Which one of these `Dockerfile` patterns is the **standard** way to keep the dependency-install layer cached when source code changes?
@@ -99,6 +155,13 @@ What does `docker run myimage serve --port 8080` execute?
 - B) `COPY requirements.txt .` then `RUN pip install -r requirements.txt` then `COPY app/ ./app/`
 - C) `RUN pip install -r https://example.com/requirements.txt`
 - D) `ADD requirements.txt /app/` then `RUN pip install /app/requirements.txt`
+
+<details>
+<summary>Answer</summary>
+
+**B** — The COPY-deps-first / COPY-source-second pattern is the foundation of Dockerfile caching. It is on the first page of every "Dockerfile best practices" guide for a reason. (A) is the antipattern this rule fixes. (C) introduces network non-determinism. (D) uses `ADD` (avoid) and does not solve the ordering problem.
+
+</details>
 
 ---
 
@@ -109,33 +172,13 @@ What does `docker run myimage serve --port 8080` execute?
 - C) Kubernetes evaluates `HEALTHCHECK` and uses it for `livenessProbe` but not `readinessProbe`.
 - D) Kubernetes refuses to schedule a Pod whose image has `HEALTHCHECK`.
 
----
-
-## Answer key
-
 <details>
-<summary>Click to reveal</summary>
+<summary>Answer</summary>
 
-1. **B** — `COPY` does exactly one thing: copy local files. `ADD` *also* fetches URLs and auto-extracts tarballs, which are the two footguns Lecture 1 warns about. Hadolint flags `ADD` (DL3020). `INCLUDE` and `IMPORT` are not Dockerfile instructions.
-
-2. **B** — Cache invalidation is positional. `COPY . .` includes `app.py`; its content changed; its cache key changed; every subsequent instruction's key changes too, including `RUN pip install`. The fix is to `COPY requirements.txt` first, run pip, *then* `COPY` the source.
-
-3. **C** — `EXPOSE` is documentation. It writes the port into the image's config blob, where `docker inspect` shows it. It does **not** publish a port. `docker run -p 8000:8000` (lowercase, explicit) is what publishes. `docker run -P` (uppercase, magic) auto-maps EXPOSEd ports to random host ports.
-
-4. **C** — `ENTRYPOINT` is the binary; `CMD` provides default arguments; positional arguments to `docker run` *replace* `CMD` and become arguments to `ENTRYPOINT`. So the run line replaces `--help` with `serve --port 8080`, and the actual command is `/usr/local/bin/myapp serve --port 8080`.
-
-5. **C** — BuildKit's `--mount=type=secret` mounts the secret to a tmpfs during the `RUN` and never records it in the image or history. `ARG` (option A) **does** record in history; `ENV` (B) writes the secret into the image config blob; `COPY .env` (D) ships the secret with the image. (C) is the only secure answer.
-
-6. **B** — Cache mounts are external to the image. The cache persists across builds and speeds up `pip install` when deps change, but the cache directory itself is unmounted before the layer is committed. That is the whole point.
-
-7. **B** — Distroless contains the runtime plus its libs and nothing else. No shell, no package manager. This is what gives distroless its near-zero CVE surface and its "you cannot `docker exec sh`" property. (A) is wrong: distroless is Debian-based, not Alpine. (C) is the opposite of true. (D) is wrong: distroless images work with any OCI-compatible builder.
-
-8. **B** — A populated "Fixed Version" means upstream has patched. The fastest, most operationally sound action is to rebuild on a current base image. Suppression (A) is a last resort and requires documented rationale. Manual patching (C) creates drift. Switching to Alpine (D) is a much bigger change for a single CVE.
-
-9. **B** — The COPY-deps-first / COPY-source-second pattern is the foundation of Dockerfile caching. It is on the first page of every "Dockerfile best practices" guide for a reason. (A) is the antipattern this rule fixes. (C) introduces network non-determinism. (D) uses `ADD` (avoid) and does not solve the ordering problem.
-
-10. **B** — Kubernetes ignores `HEALTHCHECK`. K8s uses its own `livenessProbe`, `readinessProbe`, and `startupProbe`. Compose and `docker run` use `HEALTHCHECK`; K8s does not. Best practice: define the `/healthz` endpoint in the app, reference it from `HEALTHCHECK` for Compose and from `readinessProbe` for K8s — same endpoint, two consumers.
+**B** — Kubernetes ignores `HEALTHCHECK`. K8s uses its own `livenessProbe`, `readinessProbe`, and `startupProbe`. Compose and `docker run` use `HEALTHCHECK`; K8s does not. Best practice: define the `/healthz` endpoint in the app, reference it from `HEALTHCHECK` for Compose and from `readinessProbe` for K8s — same endpoint, two consumers.
 
 </details>
 
 If under 7, re-read the lectures you missed. If 9+, you are ready for the [homework](./homework.md).
+
+---

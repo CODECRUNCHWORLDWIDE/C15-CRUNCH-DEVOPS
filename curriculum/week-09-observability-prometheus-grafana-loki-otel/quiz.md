@@ -11,6 +11,13 @@ b) Metrics, logs, traces.
 c) Prometheus, Loki, Tempo.
 d) Health checks, alerts, on-call rotations.
 
+<details>
+<summary>Answer</summary>
+
+**b)** Metrics, logs, traces. The "three pillars" framing was popularized by Cindy Sridharan's book and adopted by every observability vendor in 2018-2020.
+
+</details>
+
 ---
 
 ### Q2. A Prometheus counter is:
@@ -19,6 +26,13 @@ a) A value that goes up and down freely.
 b) A value that increases monotonically and resets to 0 only on process restart.
 c) A bucketed histogram of observations.
 d) A timestamp.
+
+<details>
+<summary>Answer</summary>
+
+**b)** Monotonically increasing; resets only on process restart. The other types (gauge, histogram, summary) are different concepts. The `_total` suffix is the naming convention.
+
+</details>
 
 ---
 
@@ -29,6 +43,13 @@ b) Because the function must look at multiple samples to compute per-second chan
 c) Because Prometheus is a pull-based system.
 d) Because `rate()` only works on counters.
 
+<details>
+<summary>Answer</summary>
+
+**b)** `rate()` computes per-second rate of change; that requires at least two samples, which requires a range. (a) and (c) are unrelated; (d) is true but is not why a range is required.
+
+</details>
+
 ---
 
 ### Q4. The Prometheus exposition format is:
@@ -37,6 +58,13 @@ a) Binary protobuf only.
 b) Line-delimited text (with optional binary OpenMetrics).
 c) JSON over HTTP.
 d) gRPC streaming.
+
+<details>
+<summary>Answer</summary>
+
+**b)** Plain text, line-delimited, with an optional binary OpenMetrics format. The text format is what every exporter emits and what every tutorial shows.
+
+</details>
 
 ---
 
@@ -47,6 +75,13 @@ b) Tells the Prometheus Operator which Kubernetes Services to scrape and how.
 c) Is part of the Kubernetes core API.
 d) Replaces the Service object.
 
+<details>
+<summary>Answer</summary>
+
+**b)** Part of the Prometheus Operator's CRD set (`monitoring.coreos.com/v1`). It declares which Services to scrape. (a) and (c) are wrong; (d) is wrong.
+
+</details>
+
 ---
 
 ### Q6. Cardinality in Prometheus refers to:
@@ -55,6 +90,13 @@ a) The number of Prometheus replicas.
 b) The number of unique time series produced by a metric, given its labels.
 c) The number of dashboards.
 d) The number of alerts that have fired this week.
+
+<details>
+<summary>Answer</summary>
+
+**b)** Series count, which equals the product of the unique values of each label on the metric. Unbounded labels (user_id, trace_id) explode cardinality.
+
+</details>
 
 ---
 
@@ -65,6 +107,13 @@ b) `for:`.
 c) `record:`.
 d) `annotations`.
 
+<details>
+<summary>Answer</summary>
+
+**b)** `for:` requires the alert condition to hold continuously for the specified duration before the alert fires. Filters out single-sample noise.
+
+</details>
+
 ---
 
 ### Q8. In the RED method, "D" stands for:
@@ -73,6 +122,13 @@ a) Density.
 b) Duration.
 c) Deployment.
 d) Discoverability.
+
+<details>
+<summary>Answer</summary>
+
+**b)** Duration. RED = Rate, Errors, Duration. Coined by Tom Wilkie of Grafana Labs.
+
+</details>
 
 ---
 
@@ -83,6 +139,13 @@ b) The complement of an SLO (e.g., for a 99.9% SLO, 0.1% is the budget).
 c) A line item in the CFO's report.
 d) The number of bugs in the codebase.
 
+<details>
+<summary>Answer</summary>
+
+**b)** The complement of the SLO. If the SLO is 99.9%, the budget is 0.1% of total requests over the window.
+
+</details>
+
 ---
 
 ### Q10. OpenTelemetry's separation between API and SDK exists because:
@@ -91,6 +154,13 @@ a) Two teams disagreed about Go vs Python.
 b) Libraries should be able to emit telemetry without committing the application to a backend.
 c) The SDK is a separate company's product.
 d) Backwards compatibility with OpenTracing.
+
+<details>
+<summary>Answer</summary>
+
+**b)** Libraries can include the API without forcing a backend choice. The application picks the SDK at startup; libraries just emit. This is the key design innovation of OpenTelemetry vs OpenTracing.
+
+</details>
 
 ---
 
@@ -101,6 +171,13 @@ b) Only the labels on the log stream; the content is stored as compressed chunks
 c) Nothing; queries scan all logs from scratch.
 d) Only the timestamps.
 
+<details>
+<summary>Answer</summary>
+
+**b)** Labels indexed; content as compressed chunks. The trade-off vs Elasticsearch: smaller storage, slower full-text search.
+
+</details>
+
 ---
 
 ### Q12. Dashboards-as-code (committing dashboards to Git) is preferred over UI-only dashboards because:
@@ -110,33 +187,14 @@ b) Cluster rebuilds, audit, peer review, replicability across environments.
 c) Git is faster than the Grafana database.
 d) The UI does not support all visualization types.
 
+<details>
+<summary>Answer</summary>
+
+**b)** All of cluster rebuilds, audit, peer review, replicability. The UI is for exploration; Git is for the dashboards your team depends on.
+
 ---
 
-## Answer key
-
-1. **b)** Metrics, logs, traces. The "three pillars" framing was popularized by Cindy Sridharan's book and adopted by every observability vendor in 2018-2020.
-
-2. **b)** Monotonically increasing; resets only on process restart. The other types (gauge, histogram, summary) are different concepts. The `_total` suffix is the naming convention.
-
-3. **b)** `rate()` computes per-second rate of change; that requires at least two samples, which requires a range. (a) and (c) are unrelated; (d) is true but is not why a range is required.
-
-4. **b)** Plain text, line-delimited, with an optional binary OpenMetrics format. The text format is what every exporter emits and what every tutorial shows.
-
-5. **b)** Part of the Prometheus Operator's CRD set (`monitoring.coreos.com/v1`). It declares which Services to scrape. (a) and (c) are wrong; (d) is wrong.
-
-6. **b)** Series count, which equals the product of the unique values of each label on the metric. Unbounded labels (user_id, trace_id) explode cardinality.
-
-7. **b)** `for:` requires the alert condition to hold continuously for the specified duration before the alert fires. Filters out single-sample noise.
-
-8. **b)** Duration. RED = Rate, Errors, Duration. Coined by Tom Wilkie of Grafana Labs.
-
-9. **b)** The complement of the SLO. If the SLO is 99.9%, the budget is 0.1% of total requests over the window.
-
-10. **b)** Libraries can include the API without forcing a backend choice. The application picks the SDK at startup; libraries just emit. This is the key design innovation of OpenTelemetry vs OpenTracing.
-
-11. **b)** Labels indexed; content as compressed chunks. The trade-off vs Elasticsearch: smaller storage, slower full-text search.
-
-12. **b)** All of cluster rebuilds, audit, peer review, replicability. The UI is for exploration; Git is for the dashboards your team depends on.
+</details>
 
 ---
 

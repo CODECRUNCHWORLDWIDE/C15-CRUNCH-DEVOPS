@@ -25,6 +25,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | `CEN 4083` — Build production-quality container images: layer caching, multi-stage builds, minimal base images, and a non-root runtime user. |
+| Industry | Take a 1 GB image somebody shipped down to under 50 MB, get its vulnerability count past a reviewer, and defend every instruction in code review. |
+| Beyond the bar | Three builds of one application measured against each other on size, build time and vulnerability count, rather than asserted — `exercises/exercise-01-three-builds-three-images.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **Week 1 of C15** and pushed your mini-project. Specifically:

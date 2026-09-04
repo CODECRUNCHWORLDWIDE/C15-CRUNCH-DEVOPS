@@ -24,6 +24,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | `CEN 4083` — Explain what a container is in terms of the operating-system mechanisms underneath it, and package an application as an image. |
+| Industry | Package a service somebody else wrote into an image and pin its base by digest, so the build a colleague runs next quarter produces the same thing. |
+| Beyond the bar | Builds a container by hand with `unshare`, `chroot` and a cgroup write before Docker is installed at all — `exercises/exercise-01-build-a-container-by-hand.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **C1 weeks 1–11** *and* **C14 · Crunch Linux**, or have equivalent comfort. Specifically:

@@ -32,6 +32,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | Past the outcome set: neither `CEN 4083` nor `CS 4273` asks for cloud cost engineering, so this week is assessed on its own terms rather than against a university outcome. |
+| Industry | Attribute the bill to a workload and a team, then write the right-sizing recommendation the owner of that workload will actually act on. |
+| Beyond the bar | Anomaly detection written as code against a live allocation API, rather than a lecture on reading the invoice afterwards — `exercises/exercise-03-anomaly-detection.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **Weeks 1-10 of C15**. Specifically:

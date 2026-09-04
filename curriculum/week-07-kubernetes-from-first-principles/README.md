@@ -29,6 +29,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | `CS 4273` — Orchestrate containers on a cluster, explain the orchestrator's architecture, and release without taking the service down. |
+| Industry | Diagnose a workload that will not come up, using only the cluster's own events and logs, while somebody is waiting on it. |
+| Beyond the bar | Five deliberately broken Deployments, each printed with the real `kubectl` output it produces, to be diagnosed one at a time — `challenges/challenge-01-debug-a-broken-deployment.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **Weeks 1-6 of C15** and have the `kind` cluster from Week 6 either still running or trivially recreatable. Specifically:

@@ -52,6 +52,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | `CEN 4083` — Integrate the toolchain of the course into one end-to-end delivery pipeline for a working application, and document its operation. |
+| Industry | Hand a successor a repository they can bring up, operate and rebuild without you, and be judged on whether they can. |
+| Beyond the bar | A destroy-and-rebuild rehearsal timed as a real operational number, written up as the runbook a stranger reads first — `lecture-notes/03-operating-the-cluster-and-the-runbook.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **Weeks 1-11 of C15** and have running outputs from at least the mini-projects of W8 (managed Kubernetes), W9 (observability), W10 (supply chain), and W11 (cost). The capstone re-uses code and config patterns from those weeks; you will copy and adapt rather than rebuild from scratch.

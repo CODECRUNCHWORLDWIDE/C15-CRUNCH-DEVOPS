@@ -28,6 +28,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | `CS 4273` — Apply configuration management and immutable infrastructure, and drive deployment from a versioned description of the desired state. |
+| Industry | Take yourself out of the deploy path, then write the rollback runbook for the day the controller does the wrong thing at speed. |
+| Beyond the bar | Installs Argo CD and Flux on parallel clusters, reconciles the same application through both, and requires a written comparison — `exercises/exercise-03-flux-vs-argo.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **Weeks 1, 2, 3, 4, and 5 of C15** and have all five mini-projects either still running or destroyed cleanly. Specifically:

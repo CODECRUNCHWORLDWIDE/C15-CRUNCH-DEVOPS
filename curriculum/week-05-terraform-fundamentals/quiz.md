@@ -11,6 +11,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) Terraform 1.8.5 plans successfully but refuses to apply.
 - D) The `required_version` constraint is advisory; nothing happens.
 
+<details>
+<summary>Answer</summary>
+
+**B.** `required_version` is enforced. Terraform 1.8 refuses to plan against a module that requires 1.9+.
+
+</details>
+
 ---
 
 **Q2.** Which of the following describes the **state file** in one sentence?
@@ -19,6 +26,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - B) A YAML document that records the configuration the user wrote.
 - C) A binary file produced by `terraform init` containing the provider plugins.
 - D) A SQL database that stores resource histories.
+
+<details>
+<summary>Answer</summary>
+
+**A.** The state file is a JSON snapshot of every resource Terraform manages, including their cloud-side IDs and every attribute the provider returned. Treat it as a secret because it can contain secrets.
+
+</details>
 
 ---
 
@@ -29,6 +43,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) "Plan: 1 to add, 0 to change, 1 to destroy." Terraform sees the old address gone from configuration and the new address absent from state.
 - D) An error: "address mismatch."
 
+<details>
+<summary>Answer</summary>
+
+**C.** Without a `moved` block, Terraform sees `digitalocean_droplet.web` in state but not in configuration (so: destroy), and sees `module.web.digitalocean_droplet.this` in configuration but not in state (so: create). The `moved` block tells the planner this is a rename, not a destroy-then-create.
+
+</details>
+
 ---
 
 **Q4.** Which Terraform 1.1+ block tells the planner that a resource has been renamed without destroying and recreating it?
@@ -37,6 +58,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - B) `moved`
 - C) `removed`
 - D) `rename`
+
+<details>
+<summary>Answer</summary>
+
+**B.** The `moved` block (Terraform 1.1+) is the declarative replacement for `terraform state mv`.
+
+</details>
 
 ---
 
@@ -47,6 +75,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) Terraform prompts interactively for the value (unless `-input=false`, in which case it errors).
 - D) Terraform skips any resource that references the variable.
 
+<details>
+<summary>Answer</summary>
+
+**C.** Without a default, the variable is required. Terraform prompts interactively unless `-input=false` is passed, in which case it errors. CI passes `-input=false` and relies on `TF_VAR_*` env vars or `-var-file=`.
+
+</details>
+
 ---
 
 **Q6.** Which of the following is the **correct** shape for a module's `outputs.tf` when the output carries a database connection string?
@@ -55,6 +90,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - B) `output "db_url" { value = "..." sensitive = true }`
 - C) `output "db_url" { value = "..." encrypted = true }`
 - D) Outputs cannot carry sensitive values; use a `local` instead.
+
+<details>
+<summary>Answer</summary>
+
+**B.** Sensitive outputs are marked `sensitive = true`. Terraform then redacts the value in plan/apply output (but it is still in state, encrypted at rest in your remote backend).
+
+</details>
 
 ---
 
@@ -65,6 +107,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) `for_each` tracks each instance by a stable key; removing the middle worker destroys only that worker. `count` would re-index the remaining two, causing them to be destroyed and recreated.
 - D) `for_each` lets you use the `each.value` expression, which `count` does not support.
 
+<details>
+<summary>Answer</summary>
+
+**C.** `for_each` tracks identity by key; removing one entry affects only that one instance. `count` tracks by index; removing an entry re-indexes everyone after it, causing unnecessary destroys.
+
+</details>
+
 ---
 
 **Q8.** Which is the **correct** order of operations for the two-phase bootstrap pattern?
@@ -73,6 +122,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - B) Create the backend bucket with a local backend (a separate `bootstrap/` directory with `terraform apply`), then create the rest of the infrastructure in a different directory that uses the now-existing bucket as a remote backend.
 - C) Create everything in one configuration with one `terraform apply`; the backend bootstraps itself.
 - D) Use the cloud's web console to create the bucket manually, then declare a backend block referencing it.
+
+<details>
+<summary>Answer</summary>
+
+**B.** Two phases, two directories. The bootstrap creates the backend bucket (with a local state on disk). The real working directory then uses the bucket as its remote backend.
+
+</details>
 
 ---
 
@@ -83,6 +139,13 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) The provider declared in `required_providers` first in source order.
 - D) An error; you must always declare `provider = ...` on every resource when multiple providers are present.
 
+<details>
+<summary>Answer</summary>
+
+**B.** Terraform infers the provider from the resource type's prefix. The local name of the provider in `required_providers` (`aws`, `digitalocean`) is what the prefix maps to. You only need `provider = ...` to disambiguate when there are multiple aliases of the same provider.
+
+</details>
+
 ---
 
 **Q10.** A teammate runs `terraform apply` while you are running `terraform apply` against the same remote state. With state locking enabled (e.g., `use_lockfile = true` on the S3 backend), what happens to the teammate's apply?
@@ -92,21 +155,15 @@ Ten questions. Lectures closed. Aim for 9/10.
 - C) The teammate's apply fails fast with a lock-info error that includes the holder of the lock and a timestamp.
 - D) The teammate's apply overrides the lock and proceeds.
 
----
+<details>
+<summary>Answer</summary>
 
-## Answers
-
-1. **B.** `required_version` is enforced. Terraform 1.8 refuses to plan against a module that requires 1.9+.
-2. **A.** The state file is a JSON snapshot of every resource Terraform manages, including their cloud-side IDs and every attribute the provider returned. Treat it as a secret because it can contain secrets.
-3. **C.** Without a `moved` block, Terraform sees `digitalocean_droplet.web` in state but not in configuration (so: destroy), and sees `module.web.digitalocean_droplet.this` in configuration but not in state (so: create). The `moved` block tells the planner this is a rename, not a destroy-then-create.
-4. **B.** The `moved` block (Terraform 1.1+) is the declarative replacement for `terraform state mv`.
-5. **C.** Without a default, the variable is required. Terraform prompts interactively unless `-input=false` is passed, in which case it errors. CI passes `-input=false` and relies on `TF_VAR_*` env vars or `-var-file=`.
-6. **B.** Sensitive outputs are marked `sensitive = true`. Terraform then redacts the value in plan/apply output (but it is still in state, encrypted at rest in your remote backend).
-7. **C.** `for_each` tracks identity by key; removing one entry affects only that one instance. `count` tracks by index; removing an entry re-indexes everyone after it, causing unnecessary destroys.
-8. **B.** Two phases, two directories. The bootstrap creates the backend bucket (with a local state on disk). The real working directory then uses the bucket as its remote backend.
-9. **B.** Terraform infers the provider from the resource type's prefix. The local name of the provider in `required_providers` (`aws`, `digitalocean`) is what the prefix maps to. You only need `provider = ...` to disambiguate when there are multiple aliases of the same provider.
-10. **C.** State locking is mandatory mutual exclusion. The second apply fails fast with a clear lock-info error (holder, time, operation). This is correct behavior; the alternative (silent waiting, or worse, parallel writes) would corrupt state.
+**C.** State locking is mandatory mutual exclusion. The second apply fails fast with a clear lock-info error (holder, time, operation). This is correct behavior; the alternative (silent waiting, or worse, parallel writes) would corrupt state.
 
 ---
+
+</details>
 
 *If you missed more than two, re-read the relevant lecture section before moving on. The state-file and module-refactoring questions especially are foundational to everything in Weeks 6-12.*
+
+---

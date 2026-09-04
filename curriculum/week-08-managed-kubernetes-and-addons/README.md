@@ -31,6 +31,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | `CS 4273` — Deploy onto a managed cloud platform and evaluate it against a self-managed alternative on operational burden, cost, control and lock-in. |
+| Industry | Install the add-on layer a real cluster needs — ingress, certificates, DNS, continuous delivery — without welding the manifests to one vendor. |
+| Beyond the bar | Five broken Argo CD `Application` objects to read and repair, written as somebody else's mistakes rather than your own — `challenges/challenge-02-debug-a-stuck-argocd-sync.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **Weeks 1-7 of C15**. Specifically:

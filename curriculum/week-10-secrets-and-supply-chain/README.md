@@ -34,6 +34,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | `CS 4273` — Manage secrets outside source control, and secure the delivery pipeline itself with signing, provenance and admission control. |
+| Industry | Refuse to run software you cannot trace: sign the image, ship a bill of materials with it, and have the cluster reject the deploy when the signature is missing. |
+| Beyond the bar | Traces two real compromises, event-stream in 2018 and ua-parser-js in 2021, back through provenance and a bill-of-materials diff — `challenges/challenge-02-trace-a-supply-chain-attack.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **Weeks 1-9 of C15**. Specifically:

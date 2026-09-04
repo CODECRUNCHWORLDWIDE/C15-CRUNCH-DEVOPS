@@ -25,6 +25,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | `CEN 4083` — Compose a multi-service application and configure it from its environment rather than from its source. |
+| Industry | Hand a new teammate a one-command local environment that comes up seeded, healthchecked and green, so their first day is not a day of setup. |
+| Beyond the bar | Reads all twelve factors as operational rules with a working recipe for each, not as a manifesto to agree with — `lecture-notes/02-the-twelve-factors-applied.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **Weeks 1 and 2 of C15** and pushed both mini-projects. Specifically:

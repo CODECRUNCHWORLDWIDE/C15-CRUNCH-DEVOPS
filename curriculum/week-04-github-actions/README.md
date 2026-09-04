@@ -25,6 +25,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | `CEN 4072` — Automate the quality gate: run the test suite on every change, measure coverage against a threshold, and let a failing test block the artifact. |
+| Industry | Own the delivery pipeline — lint, a test matrix, an image build and a registry push on merge — and bring a fourteen-minute build back under ninety seconds. |
+| Beyond the bar | Federates the pipeline into a cloud with short-lived tokens, so no long-lived cloud credential is ever stored as a repository secret — `lecture-notes/02-reusable-workflows-and-deploy-on-merge.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **Weeks 1, 2, and 3 of C15** and pushed all three mini-projects to public GitHub repos. Specifically:

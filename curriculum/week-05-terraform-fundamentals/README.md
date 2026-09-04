@@ -25,6 +25,16 @@ By the end of this week, you will be able to:
 
 ---
 
+## Standards this week meets
+
+| Bar | What this week is measured against |
+| --- | --- |
+| University | `CEN 4083` — Provision and manage infrastructure declaratively with infrastructure as code, including state, modules and a remote backend. |
+| Industry | Stand up a public service — host, managed database, domain, TLS — from a configuration a colleague reviewed, and tear it back down to nothing on request. |
+| Beyond the bar | Runs the two-phase remote-state bootstrap for real, with locking, instead of describing it — `exercises/exercise-03-remote-state.md` |
+
+---
+
 ## Prerequisites
 
 This week assumes you have completed **Weeks 1, 2, 3, and 4 of C15** and pushed all four mini-projects to public GitHub repos. Specifically:
